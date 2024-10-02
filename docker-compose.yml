@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+    mysqltest:
+      image: mysql:latest
+      environment:
+        - MYSQL_ROOT_PASSWORD=lucasvieira
+      volumes:
+      - ./init:docker-entrypoint-initdb.d
+      - mysqlVolume:/var/lib/mysql
+      - mysqlConfig:/etc/mysql
+
+
+    docker-api: 
+      build:
+        context: .
+
+      ports:
+        - 1480:8000
+      depends_on: 
+         - mysqltest
+      
+volumes:
+    mysqlVolume:
+    mysqlConfig:

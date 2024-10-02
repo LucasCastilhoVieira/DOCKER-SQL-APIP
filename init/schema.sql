@@ -1,0 +1,9 @@
+CREATE DATABASE usuarios;
+USE usuarios;
+
+CREATE TABLE IF NOT EXISTS 'usuarios'.'cadastrousuarios'(
+
+nome VARCHAR(40),
+email VARCHAR(40),
+cpf VARCHAR(12) AUTO_INCREMENT PRIMARY KEY
+) ENGINE = INNODB;
