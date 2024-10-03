@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers.cadastro_info import router
+from src.routers.cadastro_info import router
 
 app = FastAPI()
 

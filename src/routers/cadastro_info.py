@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..src.repositories.cadastrorepository import RepositoryRegister
+
 
 router = APIRouter(tags=['CADASTRAR'])
 
@@ -9,13 +9,10 @@ def cadastrar(
     email: str,
     cpf: str):
     
-    
-    try: 
+        from ..repositories.cadastrorepository import RepositoryRegister
         insert = RepositoryRegister()
         insert.insert(nome, email, cpf)
         return 'CADASTRO EFEITUADO COM SUCESSO'
     
     
-    except:
-        return 'erro'
     

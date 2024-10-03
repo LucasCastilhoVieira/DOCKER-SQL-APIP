@@ -2,8 +2,8 @@ from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy import create_engine
 
 class ConnectionDBHandler:
-    def __init_(self):
-        self.engine = 'mysql+pymysql://root:lucasvieira@mysqltest/cadastro'
+    def __init__(self):
+        self.engine = 'mysql+pymysql://root:lucasvieira@mysqltest/usuarios'
         self.session = None
         self.__engine = self.create_engine()
         
@@ -14,11 +14,11 @@ class ConnectionDBHandler:
     
     
     def get_engine(self):
-        return self.__engine()
+        return self.__engine
     
     
     def __enter__(self):
-        Session = sessionmaker(bind=self.__engine)
+        Session = sessionmaker(bind=self.get_engine())
         self.session = Session()
         return self
     

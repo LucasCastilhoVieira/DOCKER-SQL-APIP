@@ -1,9 +1,10 @@
-CREATE DATABASE usuarios;
-USE usuarios;
+CREATE DATABASE IF NOT EXISTS usuarios;
+use usuarios;
 
-CREATE TABLE IF NOT EXISTS 'usuarios'.'cadastrousuarios'(
 
+CREATE TABLE IF NOT EXISTS cadastrousuarios(
 nome VARCHAR(40),
 email VARCHAR(40),
-cpf VARCHAR(12) AUTO_INCREMENT PRIMARY KEY
-) ENGINE = INNODB;
+cpf VARCHAR(12),
+primary key(cpf)
+);
